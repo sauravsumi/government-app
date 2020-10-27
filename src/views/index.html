@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>{{title}}</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+  <form name="RegForm" method="post" action="/form">
+
+  <div>{{title}}</div><br>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required /><br>
+
+  <label for="sex">Sex:</label>
+  <input type="radio" id="male" name="sex" value="male" required/>
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="sex" value="female" />
+  <label for="female">Female</label><br>
+
+  <label for="age">Age:</label>
+  <input type="text" id="age" name="age" required /><br>
+
+  <label for="country">Country:</label>
+  <select name="country" id="country" required>
+    {% for country in countries %}
+    <option value="{{country}}">{{country}}</option>
+    {% endfor %}
+   </select><br>
+  <input type="submit">
+</form>
+</body>
+</html>
